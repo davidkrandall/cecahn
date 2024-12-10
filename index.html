@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cecahn LLC</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+        header {
+            background: url('img/cecahnhero.png') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+        }
+        header h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        header p {
+            font-size: 1.5rem;
+            font-weight: 300;
+        }
+        section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .about, .services {
+            text-align: center;
+        }
+        .about h2, .services h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .services ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+        .services li {
+            flex: 1;
+            margin: 1rem;
+            padding: 2rem;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .services li h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        form {
+            max-width: 600px;
+            margin: 2rem auto;
+            background: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        form input, form textarea, form button {
+            width: 100%;
+            margin-bottom: 1rem;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        form button {
+            background: #007BFF;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        form button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <h1>Cecahn LLC</h1>
+            <p>Transforming Ideas into Digital Excellence</p>
+        </div>
+    </header>
+    <section class="about">
+        <h2>About Us</h2>
+        <p>At Cecahn LLC, we specialize in research-driven, high-design digital products that emphasize usability and speed. From rapid prototyping to full deployment, we deliver innovative solutions tailored to your needs.</p>
+    </section>
+    <section class="services">
+        <h2>Our Services</h2>
+        <ul>
+            <li>
+                <h3>Rapid Prototyping</h3>
+                <p>Turn ideas into functional prototypes quickly and efficiently.</p>
+            </li>
+            <li>
+                <h3>Usability Testing</h3>
+                <p>Ensure user-friendly designs with rigorous usability testing.</p>
+            </li>
+            <li>
+                <h3>Full-Scale Deployment</h3>
+                <p>Deploy high-quality digital products with speed and precision.</p>
+            </li>
+        </ul>
+    </section>
+    <section class="contact">
+        <h2>Contact Us</h2>
+        <form action="#">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+</body>
+</html>
