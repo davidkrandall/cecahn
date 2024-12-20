@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Does This Sound Like You?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fafafa;
+            color: #2c2c2c;
+            line-height: 1.6;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+            background-color: #f3f4ff;
+            color: #2c2c2c;
+        }
+
+        .hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 2.5rem;
+            margin: 0;
+            letter-spacing: -0.02em;
+        }
+
+        .container {
+            padding: 40px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: white;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            border-radius: 12px;
+            margin-bottom: 32px;
+            border: 1px solid #eaeaea;
+        }
+
+        .card-header {
+            background-color: white;
+            color: #2c2c2c;
+            padding: 24px 32px;
+            font-size: 1.25rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #eaeaea;
+        }
+
+        .card-header .status {
+            font-size: 1.25rem;
+        }
+
+        .card-body {
+            padding: 32px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .scenario h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 16px;
+            color: #6b6b6b;
+        }
+
+        .scenario p {
+            font-size: 1rem;
+            color: #4a4a4a;
+            margin: 0;
+        }
+
+        .buttons {
+            text-align: right;
+            padding: 24px 32px;
+            background-color: white;
+            border-top: 1px solid #eaeaea;
+        }
+
+        .buttons button {
+            font-family: 'Montserrat', sans-serif;
+            border: none;
+            padding: 12px 24px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-left: 12px;
+            transition: all 0.2s ease;
+        }
+
+        .buttons .primary {
+            background-color: #4f46e5;
+            color: white;
+        }
+
+        .buttons .secondary {
+            background-color: white;
+            color: #4f46e5;
+            border: 1px solid #4f46e5;
+        }
+
+        .buttons .primary:hover {
+            background-color: #4338ca;
+        }
+
+        .buttons .secondary:hover {
+            background-color: #f3f4ff;
+        }
+
+        .status-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            font-size: 14px;
+        }
+
+        .status-icon.check {
+            background-color: #22c55e;
+            color: white;
+        }
+
+        .status-icon.question {
+            background-color: #f59e0b;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>Does this sound like you?</h1>
+    </div>
+
+    <div class="container">
+        <!-- Card 1 -->
+        <div class="card">
+            <div class="card-header">
+                <span>I want someone who prioritizes personal growth and wants to start a family.</span>
+                <span class="status status-icon"></span>
+            </div>
+            <div class="card-body">
+                <div class="scenario">
+                    <h3>This looks MORE like</h3>
+                    <p>You're sitting on the couch with your partner after dinner, both engrossed in self-development books you picked out together at the bookstore earlier that week. They pause to share a new perspective they've learned about emotional intelligence and how it could help when raising children. You smile, knowing they are equally committed to growth and excited about starting a family.</p>
+                </div>
+                <div class="scenario">
+                    <h3>This looks LESS like</h3>
+                    <p>Your partner is chatting enthusiastically about their latest artistic project—a mural they've been painting in the local community center. While they don't see kids in their future, their passion for leaving a legacy through art and community work inspires you. You admire their dedication to creating beauty in the world, even though it's a different path from what you envisioned.</p>
+                </div>
+            </div>
+            <div class="buttons">
+                <button class="primary" onclick="markStatus(this, 'check')">That Sounds Right</button>
+                <button class="secondary" onclick="markStatus(this, 'question')">Not Sure About This</button>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card">
+            <div class="card-header">
+                <span>I need someone who is ready for a long-term, committed relationship.</span>
+                <span class="status status-icon"></span>
+            </div>
+            <div class="card-body">
+                <div class="scenario">
+                    <h3>This looks MORE like</h3>
+                    <p>It's your partner's idea to plan a weekend retreat to reflect on your shared goals for the next five years. Over coffee on the balcony, they bring up the steps they've taken to build a life together, like consolidating schedules and planning finances. Their readiness to fully commit reassures you and strengthens your bond.</p>
+                </div>
+                <div class="scenario">
+                    <h3>This looks LESS like</h3>
+                    <p>You're sharing a laugh with your partner on a spontaneous weekend road trip. They're adventurous, fun, and incredibly present, but they gently deflect conversations about the future, saying they prefer to focus on living fully in the moment. You love their zest for life, even though you know the relationship might not be built for the long haul.</p>
+                </div>
+            </div>
+            <div class="buttons">
+                <button class="primary" onclick="markStatus(this, 'check')">That Sounds Right</button>
+                <button class="secondary" onclick="markStatus(this, 'question')">Not Sure About This</button>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card">
+            <div class="card-header">
+                <span>I want someone who is consistently emotionally available.</span>
+                <span class="status status-icon"></span>
+            </div>
+            <div class="card-body">
+                <div class="scenario">
+                    <h3>This looks MORE like</h3>
+                    <p>After a tough day at work, your partner sits with you, actively listening as you vent. They validate your feelings, share thoughtful advice, and offer to make your favorite meal. Their consistent presence and emotional responsiveness make you feel seen and supported.</p>
+                </div>
+                <div class="scenario">
+                    <h3>This looks LESS like</h3>
+                    <p>Your partner, deeply passionate about their demanding career, sends a quick "thinking of you" text during their break at a conference. They're not always available to process emotions in the moment, but when you do have time together, they plan special dates and go out of their way to make you feel cherished. You appreciate their ambition, even if it sometimes means emotional support isn't always immediate.</p>
+                </div>
+            </div>
+            <div class="buttons">
+                <button class="primary" onclick="markStatus(this, 'check')">That Sounds Right</button>
+                <button class="secondary" onclick="markStatus(this, 'question')">Not Sure About This</button>
+            </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card">
+            <div class="card-header">
+                <span>I'm looking for a partner whose lifestyle matches mine, like balancing work with travel and relaxation.</span>
+                <span class="status status-icon"></span>
+            </div>
+            <div class="card-body">
+                <div class="scenario">
+                    <h3>This looks MORE like</h3>
+                    <p>Your partner surprises you with a well-organized itinerary for a long weekend getaway. The mornings are for exploring local trails, and the evenings are reserved for wine and quiet conversation by the fire. They love balancing adventure with downtime as much as you do, and the synergy feels effortless.</p>
+                </div>
+                <div class="scenario">
+                    <h3>This looks LESS like</h3>
+                    <p>Your partner is deeply immersed in their career and prefers spending weekends grinding on their side project. They love planning elaborate vacations once or twice a year, but the in-between moments are heavily work-focused. Their drive and focus inspire you, even if it means you have to be more self-reliant for casual weekend plans.</p>
+                </div>
+            </div>
+            <div class="buttons">
+                <button class="primary" onclick="markStatus(this, 'check')">That Sounds Right</button>
+                <button class="secondary" onclick="markStatus(this, 'question')">Not Sure About This</button>
+            </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="card">
+            <div class="card-header">
+                <span>I need someone who communicates openly and handles conflict with mutual respect.</span>
+                <span class="status status-icon"></span>
+            </div>
+            <div class="card-body">
+                <div class="scenario">
+                    <h3>This looks MORE like</h3>
+                    <p>During a minor disagreement over household chores, your partner calmly sits down with you to discuss how both of you can feel more supported. They acknowledge your perspective and suggest a plan for splitting tasks equitably. You walk away feeling understood and confident in their ability to address issues constructively.</p>
+                </div>
+                <div class="scenario">
+                    <h3>This looks LESS like</h3>
+                    <p>Your partner avoids conflict at all costs and prefers to let small issues slide. When you bring up concerns, they deflect with humor or charm, making it hard to pin down solutions. While their lighthearted approach keeps things easygoing most of the time, you sometimes wish for deeper engagement in resolving differences.</p>
+                </div>
+            </div>
+            <div class="buttons">
+                <button class="primary" onclick="markStatus(this, 'check')">That Sounds Right</button>
+                <button class="secondary" onclick="markStatus(this, 'question')">Not Sure About This</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function markStatus(button, status) {
+            const card = button.closest('.card');
+            const statusIcon = card.querySelector('.status-icon');
+
+            if (status === 'check') {
+                statusIcon.textContent = '\u2713'; // Checkmark
+                statusIcon.className = 'status-icon check';
+            } else if (status === 'question') {
+                statusIcon.textContent = '?';
+                statusIcon.className = 'status-icon question';
+            }
+        }
+    </script>
+</body>
+</html>

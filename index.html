@@ -20,6 +20,17 @@
             align-items: center;
             text-align: center;
             color: #fff;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1;
+        }
+        .logo {
+            max-height: 500px;
+            width: auto;
+            position: relative;
+            z-index: 2;
         }
         header h1 {
             font-size: 4rem;
@@ -32,11 +43,23 @@
         }
         section {
             padding: 4rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
+            width: 100%;
+            position: relative;
+            z-index: 3;
+            background-color: #f9f9f9;
+            box-sizing: border-box;
+        }
+        .content-wrapper {
+            position: relative;
+            z-index: 3;
+            background-color: #f9f9f9;
+            margin-top: 100vh;
+            width: 100%;
         }
         .about, .services {
             text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
         }
         .about h2, .services h2 {
             font-size: 2.5rem;
@@ -87,44 +110,95 @@
         form button:hover {
             background: #0056b3;
         }
+        .sticky-header {
+            position: fixed;
+            top: -60px;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background: url('img/cecahnhero.png') no-repeat center center/cover;
+            z-index: 4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: top 0.3s ease-in-out;
+        }
+        .sticky-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: -1;
+        }
+        .sticky-header.visible {
+            top: 0;
+        }
+        .sticky-header .logo {
+            max-height: 40px;
+            width: auto;
+        }
     </style>
 </head>
 <body>
     <header>
         <div>
-            <h1>Cecahn LLC</h1>
-            <p>Transforming Ideas into Digital Excellence</p>
+            <img src="img/cecahnlogo.png" alt="Cecahn LLC Logo" class="logo">
         </div>
     </header>
-    <section class="about">
-        <h2>About Us</h2>
-        <p>At Cecahn LLC, we specialize in research-driven, high-design digital products that emphasize usability and speed. From rapid prototyping to full deployment, we deliver innovative solutions tailored to your needs.</p>
-    </section>
-    <section class="services">
-        <h2>Our Services</h2>
-        <ul>
-            <li>
-                <h3>Rapid Prototyping</h3>
-                <p>Turn ideas into functional prototypes quickly and efficiently.</p>
-            </li>
-            <li>
-                <h3>Usability Testing</h3>
-                <p>Ensure user-friendly designs with rigorous usability testing.</p>
-            </li>
-            <li>
-                <h3>Full-Scale Deployment</h3>
-                <p>Deploy high-quality digital products with speed and precision.</p>
-            </li>
-        </ul>
-    </section>
-    <section class="contact">
-        <h2>Contact Us</h2>
-        <form action="#">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-    </section>
+    <div class="sticky-header">
+        <img src="img/cecahnlogo.png" alt="Cecahn LLC Logo" class="logo">
+    </div>
+    <div class="content-wrapper">
+        <section class="about">
+            <h2>About Us</h2>
+            <p>At Cecahn LLC, we specialize in research-driven, high-design digital products that emphasize usability and speed. From rapid prototyping to full deployment, we deliver innovative solutions tailored to your needs.</p>
+        </section>
+        <section class="services">
+            <h2>Our Services</h2>
+            <ul>
+                <li>
+                    <h3>Rapid Prototyping</h3>
+                    <p>Turn ideas into functional prototypes quickly and efficiently.</p>
+                </li>
+                <li>
+                    <h3>Usability Testing</h3>
+                    <p>Ensure user-friendly designs with rigorous usability testing.</p>
+                </li>
+                <li>
+                    <h3>Full-Scale Deployment</h3>
+                    <p>Deploy high-quality digital products with speed and precision.</p>
+                </li>
+            </ul>
+        </section>
+        <section class="contact">
+            <h2>Contact Us</h2>
+            <form action="#">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const stickyHeader = document.querySelector('.sticky-header');
+            const contentWrapper = document.querySelector('.content-wrapper');
+            
+            window.addEventListener('scroll', () => {
+                const scrollPosition = window.scrollY;
+                const triggerPosition = window.innerHeight - 60;
+                
+                if (scrollPosition >= triggerPosition) {
+                    stickyHeader.classList.add('visible');
+                } else {
+                    stickyHeader.classList.remove('visible');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
