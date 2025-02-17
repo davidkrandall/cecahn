@@ -210,6 +210,52 @@
             font-weight: 600;
         }
 
+        /* Modal styles */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: 1000;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            max-width: 800px;
+            height: 80vh;
+            background-color: white;
+            z-index: 1001;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .modal iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 8px;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 8px;
+        }
+
         .agenda-item {
             padding: 1.5rem 0;
             border-bottom: 1px solid #eee;
@@ -378,7 +424,7 @@
                     <p><i class="fas fa-map-marker-alt" style="color: white;"></i> San Francisco, CA</p>
                     <p><i class="far fa-calendar-alt" style="color: white;"></i> September 24, 2025</p>
                 </div>
-                <a href="https://airtable.com/appaXWUqF5WRAYkJp/pagZXN8I6RNlotwBS/form" class="cta-button" target="_blank">Apply to Attend</a>
+                <a href="https://airtable.com/embed/appaXWUqF5WRAYkJp/pagZXN8I6RNlotwBS/form" class="cta-button" id="apply-button">Apply to Attend</a>
             </div>
         </div>
     </section>
@@ -464,6 +510,45 @@
         // Observe all cards
         document.querySelectorAll('.card').forEach(card => {
             observer.observe(card);
+        });
+    </script>
+    <!-- Modal -->
+    <div class="modal-overlay" id="modal-overlay"></div>
+    <div class="modal" id="modal">
+        <button class="modal-close" id="modal-close">×</button>
+        <iframe id="application-frame" class="airtable-embed" src="" frameborder="0" onmousewheel="" style="background: transparent; border: 1px solid #ccc;"></iframe>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const applyButton = document.getElementById('apply-button');
+            const modal = document.getElementById('modal');
+            const modalOverlay = document.getElementById('modal-overlay');
+            const modalClose = document.getElementById('modal-close');
+            const applicationFrame = document.getElementById('application-frame');
+
+            function openModal(url) {
+                applicationFrame.src = url;
+                modal.style.display = 'block';
+                modalOverlay.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeModal() {
+                modal.style.display = 'none';
+                modalOverlay.style.display = 'none';
+                applicationFrame.src = '';
+                document.body.style.overflow = 'auto';
+            }
+
+            applyButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                const url = this.getAttribute('href');
+                openModal(url);
+            });
+
+            modalClose.addEventListener('click', closeModal);
+            modalOverlay.addEventListener('click', closeModal);
         });
     </script>
 </body>
