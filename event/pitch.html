@@ -14,6 +14,8 @@
             color: #333;
             line-height: 1.6;
             font-size: 18px;
+            background: linear-gradient(135deg, #DED0E5 0%, #C8E0F1 100%);
+            min-height: 100vh;
         }
         .slide-container {
             width: 100vw;
@@ -25,12 +27,16 @@
             position: absolute;
             width: 100%;
             height: 100%;
-            display: none;
+            opacity: 0;
+            visibility: hidden;
             padding: 40px;
             box-sizing: border-box;
-            background: #fff;
+            background: transparent;
+            transition: opacity 0.5s ease-in-out, visibility 0.5s;
         }
         .slide.active {
+            opacity: 1;
+            visibility: visible;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
@@ -44,7 +50,7 @@
             margin: 0 auto;
             overflow-y: auto;
             padding: 40px;
-            background: white;
+            background: rgba(255, 255, 255, 0.85);
             border-radius: 5px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
@@ -57,7 +63,7 @@
             justify-content: center;
             gap: 20px;
             padding: 20px;
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.0);
         }
         .nav-btn {
             padding: 12px 24px;
