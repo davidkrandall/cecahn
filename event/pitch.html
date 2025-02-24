@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Communication Platform</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            overflow: hidden;
+            color: #333;
+            line-height: 1.6;
+            font-size: 18px;
+        }
+        .slide-container {
+            width: 100vw;
+            height: calc(100vh - 220px);
+            position: relative;
+            margin-top: 0px;
+        }
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: none;
+            padding: 40px;
+            box-sizing: border-box;
+            background: #fff;
+        }
+        .slide.active {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .slide-content {
+            max-width: 800px;
+            width: 100%;
+            height: calc(100vh - 380px);
+            margin: 0 auto;
+            overflow-y: auto;
+            padding: 40px;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .navigation {
+            position: fixed;
+            bottom: 120px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+        }
+        .nav-btn {
+            padding: 12px 24px;
+            background: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+        .nav-btn:hover {
+            background: #555;
+        }
+        .logo {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            max-width: 200px;
+        }
+        h1 {
+            color: #1a1a1a;
+            margin-bottom: 30px;
+            margin-top: 0px;
+            font-weight: 600;
+            font-size: 32px;
+        }
+        h2 {
+            font-weight: 500;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        h3 {
+            font-weight: 500;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+        ul {
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="slide active">
+            <div class="slide-content">
+                <h1>Transform Your Event Communication Experience</h1>
+                <h2>Executive Summary</h2>
+                <p>We offer a premium automation service that transforms how you communicate with event guests, eliminating manual spreadsheet management while delivering a sophisticated, high-touch experience that reflects your event's prestige.</p>
+                <p>For $2-5k per event, we provide a comprehensive solution that enhances both operational efficiency and guest satisfaction.</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="slide-content">
+                <h1>Key Value For Hosts</h1>
+                <h3>Operational Excellence</h3>
+                <ul>
+                    <li>Replace complex spreadsheets and manual tracking with streamlined automation</li>
+                    <li>Reduce staff time spent on routine communications by up to 90%</li>
+                    <li>Focus your team's energy on meaningful guest interactions</li>
+                    <li>Gain real-time visibility into guest responses and engagement</li>
+                </ul>
+                <h3>Brand Consistency</h3>
+                <ul>
+                    <li>Maintain impeccable communication standards across all guest touchpoints</li>
+                    <li>Deliver perfectly timed, professionally crafted messages</li>
+                    <li>Create distinct communication tracks for different guest segments (VIPs, speakers, sponsors)</li>
+                    <li>Ensure every guest interaction reflects your event's prestigious nature</li>
+                </ul>
+                <h3>Adaptive Control</h3>
+                <ul>
+                    <li>Easily modify communication flows as event details evolve</li>
+                    <li>Add new guest segments or special requirements without complexity</li>
+                    <li>Update all relevant guests simultaneously when changes occur</li>
+                    <li>Maintain a single source of truth for event information</li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="slide">
+            <div class="slide-content">
+                <h1>Key Value For Guests</h1>
+                <h3>Premium Experience</h3>
+                <ul>
+                    <li>Receive timely, relevant information tailored to their role</li>
+                    <li>Access a dedicated portal for all event details and updates</li>
+                    <li>Self-manage RSVPs and preferences without awkward follow-ups</li>
+                    <li>Experience consistent care regardless of when they were invited</li>
+                </ul>
+                <h3>Clear Communication</h3>
+                <ul>
+                    <li>Never miss critical event updates or deadlines</li>
+                    <li>Understand exactly what to expect and when</li>
+                    <li>Access all historical communications and decisions</li>
+                    <li>Receive immediate confirmation of all interactions</li>
+                </ul>
+                <h3>Seamless Check-in</h3>
+                <ul>
+                    <li>Skip long registration lines with pre-verified credentials</li>
+                    <li>Experience VIP-level service regardless of arrival time</li>
+                    <li>Receive personalized welcome materials instantly</li>
+                    <li>Connect smoothly with event-specific experiences</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="slide-content">
+                <h1>Implementation Process</h1>
+                <h3>Initial Setup</h3>
+                <ul>
+                    <li>Custom branding and message development</li>
+                    <li>Guest segment definition and communication flow design</li>
+                    <li>Integration with existing systems and processes</li>
+                </ul>
+                <h3>Ongoing Management</h3>
+                <ul>
+                    <li>Real-time guest list updates and tracking</li>
+                    <li>Automated communication deployment</li>
+                    <li>Exception handling and special requests</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="slide-content">
+                <h1>ROI Benefits</h1>
+                <ul>
+                    <li>Eliminate 90% of manual guest list management tasks</li>
+                    <li>Reduce guest support inquiries by up to 60%</li>
+                    <li>Save 20-30 hours of staff time per event</li>
+                    <li>Minimize costly communication errors and oversights</li>
+                    <li>Enhance guest satisfaction and event reputation</li>
+                </ul>
+                <p>Our platform typically delivers a 3-4x return on investment through staff time savings and enhanced guest satisfaction. We often justify the investment within the first week of deployment.*</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="navigation">
+        <button class="nav-btn" onclick="prevSlide()">Previous</button>
+        <button class="nav-btn" onclick="nextSlide()">Next</button>
+    </div>
+
+    <img src="shiftlogo.png" alt="Shift Logo" class="logo">
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function showSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (n + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') nextSlide();
+            if (e.key === 'ArrowLeft') prevSlide();
+        });
+    </script>
+</body>
+</html> 
